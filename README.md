@@ -40,3 +40,7 @@ where you pick a strategy by number to switch it live. Use `--demo-only` to skip
 
 `Checkout` and the existing strategies do not change. `StudentDiscountStrategy` was added this way
 (see the commit history).
+
+## UML
+
+![UML class diagram](docs/uml-class-diagram.png)
