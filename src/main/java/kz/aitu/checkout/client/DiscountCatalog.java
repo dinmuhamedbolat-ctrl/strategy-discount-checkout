@@ -5,6 +5,7 @@ import kz.aitu.checkout.strategy.DiscountStrategy;
 import kz.aitu.checkout.strategy.FixedAmountCouponStrategy;
 import kz.aitu.checkout.strategy.NoDiscountStrategy;
 import kz.aitu.checkout.strategy.PercentageDiscountStrategy;
+import kz.aitu.checkout.strategy.StudentDiscountStrategy;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -27,7 +28,8 @@ public class DiscountCatalog {
                 .register("1", NoDiscountStrategy::new)
                 .register("2", () -> new PercentageDiscountStrategy(20))
                 .register("3", () -> new FixedAmountCouponStrategy("5000"))
-                .register("4", BuyThreeGetCheapestFreeStrategy::new);
+                .register("4", BuyThreeGetCheapestFreeStrategy::new)
+                .register("5", StudentDiscountStrategy::new);
     }
 
     public DiscountCatalog register(String code, Supplier<DiscountStrategy> factory) {
